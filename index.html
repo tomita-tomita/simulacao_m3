@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link href="style.css" rel="stylesheet">
+<title>Simulação</title>
+</head>
+<body>
+ 
+<div id="box">
+    <div id="carro1"></div>
+    <div id="carro2"></div>
+    <div id="campo"></div>
+    <div id="lavacao"></div>
+    <div>
+        <button id="iniciar">Iniciar</button>
+    </div>
+</div>
+ 
+</body>
+<script>
+$(document).ready(function(){
+    $('#iniciar').on('click', function(){
+        setTimeout(function(){
+            inicia();
+        }, 3000); 
+    });
+
+    function inicia (){
+        $("#carro1").animate({
+        "left": "300px"
+        }, 400, null, function(){
+            $('#lavacao').attr('style', 'border-color: red');
+            espera('carro1');
+        });
+    }
+
+    function espera (id){        
+        if(id  != "carro2"){
+            setTimeout(function(){
+                chega();
+            }, 3000);     
+        }   
+        setTimeout(function(){
+            sai(id);
+        }, 5000);        
+    }
+
+    function entra (){        
+        $("#carro2").animate({
+            "left": "300px"
+        }, 400, null, function(){
+            $('#lavacao').attr('style', 'border-color: red');
+            espera('carro2');
+        });  
+    }
+
+    function chega (){        
+        $("#carro2").animate({
+            "left": "100px"
+        }, 400, null, function(){
+        });   
+    };
+
+    function sai (id){        
+        $("#"+id).animate({
+            "left": "800px"            
+        }, 400, null, function(){
+            $('#lavacao').attr('style', 'border-color: green');
+            if(id != 'carro2'){
+                entra();
+            }
+        });        
+    }
+});
+</script>
+</html>

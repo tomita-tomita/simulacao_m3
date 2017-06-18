@@ -1,0 +1,44 @@
+#box{
+    border:1px solid #512B11;    
+    height:200px;
+    left:10px;
+    position:relative;
+    top:10px;
+    overflow:hidden;
+    width:600px;
+}
+ 
+#lavacao{    
+    border: 5px solid green;
+    border-bottom: 0px;
+    bottom:0;
+    height:80px;
+    position:absolute;
+    width:140px;
+    top: 45px;
+    left: 290px;
+}
+
+#campo{
+    background:gray;
+    border-top:20px solid darkslategrey;
+    bottom:0;
+    height:50px;
+    position:absolute;
+    width:600px;
+}
+ 
+#carro1, #carro2{    
+    height:92px;
+    position:absolute;
+    top:39px;
+    width:130px;
+}
+#carro1{    
+    left:-150px;
+    background-image: url("imagens/carro.png");
+}
+#carro2{    
+    left:-150px;
+    background-image: url("imagens/carro.png");
+}
